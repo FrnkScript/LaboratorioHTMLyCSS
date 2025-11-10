@@ -1,0 +1,245 @@
+/* Fuente externa */
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Estilos Generales */
+* {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  box-sizing: border-box; /* Añadido para un control más consistente del layout y que no rompa el diseño */
+}
+
+body {
+  margin: 0;
+  /* padding-top: 30px; */ /* espacio superior */
+  /* padding-bottom: 40px; */   /*  espacio inferior (dejando el footer en negro y sin añadir fondo blanco (margin-bottom) */
+  background-color: #fff; /* fondo blanco en toda la página */
+  color: #212429;
+}
+
+h2 {
+  padding: 15px;
+  padding-left: 150px; /* para que el texto se desplace hacia la derecha */
+  margin-bottom: 1px;  /* espacio blanco hacia el contenido siguiente */
+  font-size: 32px;
+  text-align: left; /* Justificar el texto a la izquierda */
+  transition: color 2s ease;
+}
+
+h2:hover {
+  color: gold;
+}
+
+
+/* <nav> Navegación Principal */
+
+#navprincipal {
+  display: flex;
+  justify-content: center;  /* Centra horizontalmente */
+  align-items: center;  /* Alinea verticalmente */
+  gap: 70px;  /* Espaciado entre enlaces */
+  position: sticky; /* Diseño sticky: la barra de navegación se mantiene visible al hacer scroll. */
+  text-transform: uppercase;  /* Para poner en mayúscula el texto del icono del menú principal */
+  border-bottom: 1.9px solid #212429;
+  background-color: #fff; /* Recomendado: evita trasparencias si hay scroll */
+  top: 0px;
+  z-index: 1000;  /* Asegura que quede por encima de otros elementos */
+  padding-top: 30px;
+  padding-bottom: 20px; /* más fondo blanco debajo del contenido */
+}
+
+/* Enlaces principales.- En "nav a" le dejo el color del texto para todos los nav que contengas <a> (incluído el footer) */
+nav a {
+  display: flex;  /* Convierte el enlace en contenedor flex -> Icono + texto alineado*/
+  align-items: center;
+  gap: 0.5rem;  /* Espaciado entre icono y texto */
+  padding: 10px;
+  text-decoration: none;
+  color: #212924;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  transition: color 2s ease;
+}
+
+nav a:hover {
+  color: gold;
+}
+
+/* ==== Botón Hamburguesa ==== */
+#menu-toggle {
+  display: none;  /* oculto por defecto (solo visible en móviles) */
+}
+
+/* footer <nav> inferior*/
+#navpie {
+  display: flex;
+  justify-content: center;    /* Centra horizontalmente */
+  align-items: center;         /* Alinea verticalmente */
+  gap: 270px;                   /* Espaciado entre enlaces */
+  padding: 10px;
+  font-size: 16px;
+  background-color: #212429;
+}
+
+#navpie a {
+  display: flex;  /* Convierte el enlace en contenedor flex -> Icono + texto alineado */
+  align-items: center;
+  padding: 16px;
+  color: #ddd;
+  font-weight: 400;
+  letter-spacing: 2px;
+  transition: color 2s ease;
+}
+
+#navpie a:hover {
+  color: gold;
+}
+
+.iconopie {
+  filter: invert(1);
+  width: 29px;
+  height: 29px;
+}
+
+/* --- Galería de productos 3x2 --- */
+.galeria-productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);      /* tres columnas */
+  gap: 1.2rem;                                /* espacio entre imágenes */
+  padding: 1rem 22rem;                        /* Para tener más margen lateral en la izquierda y en la derecha. */
+  justify-items: center;                      /* Aquí centro cada producto en su columna */
+  align-items: start;                         /* alineo superiormente los productos */
+}
+
+/* --- Imagen de cada producto --- */
+.producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.producto:hover {
+  transform: translateY(-10px); /* Cuando pasas el ratón por la imagen, dicha imagen va hacia arriba */
+}
+
+/* --- Aquí están mis imágenes centradas con sus medidas --- */
+.producto img {
+  width: 100%;             /* Para que ocupe el % del ancho de la imagen */
+  height: auto;           /* Mantiene proporción */
+  object-fit: contain;    /* No recorta */
+  display: block;
+  margin: 0 auto;         /*  Centra la imagen */
+  background-color: transparent; /* Sin fondo blanco visible */
+
+  /* Bordes redondeados solo en la parte arriba 
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  */
+  border-radius: 12px; /* Bordes redondeados completos */
+  overflow: hidden; /* evito que la imagen se salga de sus bordes */
+}
+
+/* --- Pie de foto: descripción y precio --- */
+.producto figcaption {
+  display: flex;
+  justify-content: space-between; /* texto a izquierda y derecha */
+  align-items: center;
+  background-color: #fdfdfd;
+  width: 100%;           /* igual que la imagen (.producto img { width: 55%; }) */
+  padding: 0.8rem 1rem; /* aquí ajusto un poco el espaciado */
+  box-sizing: border-box; /* aseguro que el padding no sume más ancho que la imagen */
+  height: 1rem;
+  font-size: 1rem;
+  margin-top: 0.5rem; /* dejo un pequeño espacio debajo de la imagen */
+  margin-left: auto;  /* lo centro horizontalmente */
+  margin-right: auto;
+  color: #2e2e2e;
+}
+
+/* Descripción a la izquierda del producto */
+.producto .descripcion {
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Precio a la derecha del producto */
+.producto .precio {
+  font-weight: 700; /* texto en negrita */
+  color: rgb(247, 182, 3); /* tono dorado opcional */
+  text-align: right;
+}
+
+/* Efectos para responsive web design */
+/*  Responsive: cuando la pantalla es más estrecha  */
+@media (max-width: 900px) {
+  .galeria-productos {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 3rem;  /* Para tener unmenor margen lateral */
+  }
+}
+
+@media (max-width: 600px) {
+  .galeria-productos {
+    grid-template-columns: 1fr;
+    padding: 1rem 2rem;  /* Para tener menos margen lateral */
+  }
+  .producto img {
+    width: 70%; /* Más grande en pantallas pequeñas */
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/*      Diseño lemoncode para responsive general: máximo 920px      */
+/* ---------------------------------------------------------------- */
+@media (max-width: 920px) {
+
+  /*  NAV PRINCIPAL  */
+  #navprincipal {
+    flex-wrap: wrap;                 /* con este flex-wrap permito que los elementos bajen si no caben en una línea */
+    gap: 20px;                       /* Menor espacio entre enlaces */
+    padding: 10px;                   /* para reducir el padding para pantallas más pequeñas */
+    border-bottom: 1px solid #212429;
+  }
+
+  #navprincipal a {
+    font-size: 14px;                 /* Texto un poco más pequeño */
+    letter-spacing: 2px;             /* para ajustar el espaciado de letras */
+  }
+
+  /* evito que los iconos de mi nav se desplacen o deformen */
+  #navprincipal img {
+    width: 18px;
+    height: 18px;
+  }
+
+  /*  PIE DE PÁGINA  */
+  #navpie {
+    flex-wrap: wrap;                 /* Si hay muchos enlaces, que ests bajen a la siguiente línea */
+    gap: 40px;                       /* Reducir espacio entre enlaces */
+    padding: 20px 10px;              /* Más cómodo en pantallas pequeñas */
+    font-size: 14px;
+    justify-content: center;         /* Centrar los enlaces */
+  }
+
+  #navpie a {
+    padding: 8px;
+    text-align: center;              /* Centrar el texto si hay varias líneas */
+  }
+
+  #navpie img {
+    width: 22px;                     /* Iconos más pequeños para móviles */
+    height: 22px;
+  }
+}
+
+/* Efecto suave de desplazamiento entre secciones */
+html {
+  scroll-behavior: smooth;
+}

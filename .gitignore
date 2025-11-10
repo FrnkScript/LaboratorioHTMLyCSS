@@ -1,0 +1,19 @@
+# Archivos del sistema:
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de editor (VS Code)
+.vscode/
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+
+# Caché del navegador o builds (por si uso herramientas web)
+dist/
+build/
+
+# Otros archivos
+infoGitIgnore.txt
