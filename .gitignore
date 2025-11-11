@@ -2,18 +2,44 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+ehthumbs.db
 
 # Archivos de editor (VS Code)
 .vscode/
 *.log
+*.code-workspace
 
 # Archivos temporales
 *.tmp
+*.bak
+*.swp
 *.bak
 
 # Caché del navegador o builds (por si uso herramientas web)
 dist/
 build/
+.tmp/
+.cache/
+coverage/
 
 # Otros archivos
 infoGitIgnore.txt
+
+# Dependencias
+node_modules/
+
+# Archivos de bloqueo o generados automáticamente
+package-lock.json
+yarn.lock
+
+# Archivos de entorno (contraseñas, API keys, etc.)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
